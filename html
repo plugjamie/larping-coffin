@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LarpingCoffin</title>
+    <link rel="icon" type="image/webp" href="img/larpingcoffin.webp">
+    <style>
+        body{margin:0;padding:0;overflow-y:scroll;background:url('https://media1.tenor.com/images/a7b29d9bcdffef5840049c3ca3070b54/tenor.gif?itemid=17865734') no-repeat center center fixed;background-size:cover;}
+        .navbar{position:fixed;top:10px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.5);color:white;font-family:'Arial',sans-serif;display:flex;justify-content:center;padding:10px 20px;box-sizing:border-box;border-radius:20px;}
+        .navbar a{color:white;text-decoration:none;margin:0 10px;font-size:18px;transition:color 0.3s ease;}
+        .navbar a:hover{color:#5865F2;}
+        .moving-text{position:fixed;top:60px;width:100%;white-space:nowrap;overflow:hidden;box-sizing:border-box;background:rgba(0,0,0,0.8);color:white;font-size:24px;font-family:'Courier New',Courier,monospace;}
+        .moving-text span{display:inline-block;padding-left:100%;animation:scroll 10s linear infinite;}
+        @keyframes scroll{0%{transform:translateX(0);}100%{transform:translateX(-100%);}}
+        .center-text{font-size:5em;font-family:'Arial',sans-serif;color:white;text-shadow:0 0 20px rgba(255,255,255,0.8);animation:fade-text 3s linear infinite;}
+        @keyframes fade-text{0%,100%{color:white;}50%{color:black;}}
+        .discord-button{position:fixed;top:100px;right:10px;width:50px;height:50px;background-color:#5865F2;border-radius:50%;display:flex;justify-content:center;align-items:center;cursor:pointer;text-decoration:none;box-shadow:0 0 10px rgba(0,0,0,0.5);transition:background-color 0.3s ease,transform 0.3s ease;}
+        .discord-button img{width:24px;height:24px;}
+        .discord-button:hover{background-color:#4752c4;transform:scale(1.1);}
+        .vrchat-button{position:fixed;top:160px;right:10px;width:50px;height:50px;background-color:rgba(0,0,0,0.6);border-radius:50%;display:flex;justify-content:center;align-items:center;cursor:pointer;text-decoration:none;box-shadow:0 0 10px rgba(0,0,0,0.5);transition:background-color 0.3s ease,transform 0.3s ease;}
+        .vrchat-button img{width:24px;height:24px;}
+        .vrchat-button:hover{background-color:rgba(0,0,0,0.8);transform:scale(1.1);}
+        .content{text-align:center;padding-top:150px;}
+        .hidden{display:none;}
+        .achievement{display:flex;flex-direction:column;align-items:center;margin:20px auto;max-width:600px;background:rgba(0,0,0,0.7);padding:20px;border-radius:10px;color:white;}
+        .achievement img{width:700px;height:auto;border-radius:10px;margin-bottom:20px;max-height:400px;}
+        .achievement-description{font-family:'Arial',sans-serif;font-size:18px;line-height:1.5;text-shadow:0 0 10px rgba(255,255,255,0.6);padding:10px;}
+        .stats{font-size:1.5em;font-family:'Arial',sans-serif;color:white;text-shadow:0 0 20px rgba(255,255,255,0.8);animation:fade-text 3s linear infinite;}
+        .members-list{font-size:1.2em;font-family:'Arial',sans-serif;color:white;text-align:left;margin-top:30px;padding:10px;background:rgba(0,0,0,0.7);border-radius:10px;display:inline-block;width:auto;box-sizing:border-box;}
+        .members-list p{margin:5px 0;color:red;text-shadow:0 0 20px rgba(255,0,0,0.8);}
+    </style>
+    <script>
+        let titleText = "LarpingCoffin";
+        let titleIndex = 0;
+
+        function animateTitle() {
+            document.title = titleText.slice(titleIndex) + " " + titleText.slice(0, titleIndex);
+            titleIndex = (titleIndex + 1) % titleText.length;
+        }
+
+        setInterval(animateTitle, 200);
+
+        function showPage(pageId) {
+            document.querySelectorAll('.content').forEach(page => page.classList.add('hidden'));
+            document.getElementById(pageId).classList.remove('hidden');
+        }
+    </script>
+</head>
+<body>
+<audio autoplay hidden>
+  <source src="img/song.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+    <div class="navbar">
+        <a href="javascript:void(0);" onclick="showPage('main-page')">Main Page</a>
+        <a href="javascript:void(0);" onclick="showPage('members')">Members</a>
+    </div>
+
+    <div class="moving-text">
+        <span>Super Cool As Well As Some Of The Best Ragebaiting Demons</span>
+    </div>
+
+    <a href="https://discord.gg/gaEehWuP5K" class="discord-button" target="_blank">
+        <img src="https://imgs.search.brave.com/SkYbb-x4VtQAfTKbKM7VAYo_S78DS3J0SZLcuGoBKc0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/bG9nb2pveS5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMjEw/NDIyMDk1MDM3L2Rp/c2NvcmQtbWFzY290/LnBuZw" alt="Discord">
+    </a>
+
+    <a href="https://vrchat.com/home/group/grp_d0bc42d5-fbeb-48a4-8f6e-a32960eb2c95" class="vrchat-button" target="_blank">
+        <img src="https://imgs.search.brave.com/E_Qk7Fv1HB5YkniNuQKd2fstBqw7C_SBRtGFZPWS_3U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdHls/ZXMucmVkZGl0bWVk/aWEuY29tL3Q1XzMy/czAyL3N0eWxlcy9j/b21tdW5pdHlJY29u/X2k3bWlhbmhydnlr/MjEucG5n" alt="VRChat">
+    </a>
+
+    <div id="main-page" class="content">
+        <div class="center-text">ＬａｒｐｉｎｇＣｏｆｆｉｎ</div>
+        <div class="stats">
+            <p>400+ Larping Coffin Members</p>
+            <p>300+ HR - How Long Larping Coffin's Been Up</p>
+            <p>Really Chill Members</p>
+        </div>
+
+        <div class="members-list">
+            <p><strong>Owners Of Larping Coffin</strong></p>
+            <p><strong>BrokenGemini / BooGimmie</strong> - Discord: <em>boogimme</em></p>
+            <p><strong>PlugJamie / Plug</strong> - Discord: <em>fed.ink</em></p>
+        </div>
+    </div>
+    <div id="members" class="content hidden">
+        <div class="center-text">Members</div>
+
+        <div class="members-list">
+            <p><strong>Real Larping Coffin Members</strong></p>
+            <p>Chill Guy</p>
+            <p>Darko</p>
+            <p>Cut Scars</p>
+            <p>Ermsigma</p>
+        </div>
+    </div>
+</body>
+</html>
