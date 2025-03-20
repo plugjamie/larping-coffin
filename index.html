@@ -17,20 +17,11 @@
             font-family: monospace;
             font-size: 16px;
             overflow: hidden;
+            cursor: pointer;
         }
         .banner {
             text-align: center;
             white-space: pre;
-        }
-        .swing {
-            position: absolute;
-            bottom: 670px;
-            left: 50px;
-            width: 150px;
-            height: 150px;
-            background-image:
-            transform-origin: top center;
-            animation: swing 2s infinite ease-in-out;
         }
         @keyframes swing {
             0% { transform: rotate(10deg); }
@@ -40,21 +31,32 @@
         .profile {
             position: absolute;
             top: 50%;  
-            width: 200px;
-            height: 50px;
+            width: 120px;
+            height: 120px;
             background-color: white;
             color: black;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             font-size: 18px;
             border-radius: 10px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
+            overflow: hidden;
+            text-align: center;
         }
 
         .profile:hover {
             transform: translateY(-20px);
+        }
+
+        .profile img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            object-fit: cover;
         }
 
         .profile1 { left: 10%; }
@@ -83,11 +85,32 @@
         .navigate-button:hover {
             background-color: gray;
         }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .audio {
+            display: none;
+        }
     </style>
 </head>
-<body>
+<body onclick="playAudio()">
+    <div class="overlay" id="enterOverlay">
+        <p style="color: white; font-size: 30px;">enter...</p>
+    </div>
+
     <div class="banner">
-::::::::::.  ...    :::: ::::::..    .::::::.   ...    :::. ,::::::  
+ ::::::::::.  ...    :::: ::::::..    .::::::.   ...    :::. ,::::::  
  `;;;```.;; ;;;     ;;;; ;;;``;;;;  ;;;`    `   ;;     ;;;; ;;;''''  
   `]]nnn]]' [['     [[[  [[[,/[[['  '[==/[[[[,[ ['     [[[  [[cccc   
    $$$""    $$      $$$  $$$$$$c      '''    $$ $      $$$  $$""""   
@@ -96,25 +119,46 @@
     </div>
     <div class="swing"></div>
     <div class="profile profile1">
+        <img src="https://cdn.discordapp.com/attachments/1352046968192368701/1352050918627213414/Screenshot_2025-02-14_185829.png?ex=67dc9b0a&is=67db498a&hm=a622cb45b9bb1ec689f717aabed8a3d54e69533d1b44f26061e9823cd56739fe" alt="Profile 1"> 
         Plug
     </div>
     <div class="profile profile2">
+        <img src="https://media.discordapp.net/attachments/1352046968192368701/1352050917997805588/Screenshot_2025-03-08_144146.png?ex=67dc9b0a&is=67db498a&hm=a99424462f039e9132c9a5c1bad318b97d22f79e71ae3ee5042a95d80a167e6b&=&format=webp&quality=lossless" alt="Profile 2">
         crucifiedv1
     </div>
     <div class="profile profile3">
+        <img src="https://cdn.discordapp.com/attachments/1352046968192368701/1352050908636123166/Screenshot_2025-03-17_141855.png?ex=67dc9b08&is=67db4988&hm=bfd47a1cf809090189eb83c43625d570dce492f22f3ede63d9d830b434ecc2b6" alt="Profile 3">
         slynnster
     </div>
     <div class="profile profile4">
+        <img src="https://media.discordapp.net/attachments/1352046968192368701/1352050917687558217/Screenshot_2025-03-11_171159.png?ex=67dc9b0a&is=67db498a&hm=78c0ff3e4aa1f4cf2dbed50737b57fafb851dceff39d69b7b257b870aa102bdc&=&format=webp&quality=lossless" alt="Profile 4">
         kl
     </div>
 
     <div class="profile profile5">
+        <img src="https://cdn.discordapp.com/attachments/1352046968192368701/1352050908279865474/Screenshot_2025-03-19_111740.png?ex=67dc9b08&is=67db4988&hm=1a45697cac4cf8da904225520bbf72b624a5935991e5ab8d4bb844f5ec442719" alt="Profile 5">
         lie
     </div>
     <div class="profile profile6">
+        <img src="https://cdn.discordapp.com/attachments/1352046968192368701/1352050908917137509/Screenshot_2025-03-15_144623.png?ex=67dc9b08&is=67db4988&hm=e6b939086ea4c8b77da9fd37ffa635da6eb61f427336407708262cf53c521c51" alt="Profile 6">
         0x12
     </div>
 
     <button class="navigate-button" onclick="window.location.href='hoa.html'">HOA</button>
+
+    <audio id="audio" class="audio">
+        <source src="https://cdn.discordapp.com/attachments/1185334538881212446/1276449980659273749/hemorrhageidle.ogg?ex=67dc72ee&is=67db216e&hm=e56c25e3de59c09215f54e24d45e27043a3908d1f1dfd63ab08d87e70f1fc62e&" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        function playAudio() {
+            var audio = document.getElementById("audio");
+            audio.play();
+            
+            var overlay = document.getElementById("enterOverlay");
+            overlay.style.display = "none";
+        }
+    </script>
 </body>
 </html>
