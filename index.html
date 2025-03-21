@@ -23,10 +23,10 @@
             text-align: absolute;
             white-space: pre;
         }
-        }
+
         .profile {
             position: absolute;
-            top: 50%;  
+            top: 50%;
             width: 120px;
             height: 120px;
             background-color: white;
@@ -55,6 +55,24 @@
             object-fit: cover;
         }
 
+        /* Swinging effect */
+        @keyframes swing {
+            0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(15deg);
+            }
+            50% {
+                transform: rotate(0deg);
+            }
+            75% {
+                transform: rotate(-15deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
         .profile1 { left: 15%; }
         .profile2 { left: 35%; }
         .profile3 { left: 55%; }
@@ -95,6 +113,7 @@
             justify-content: center;
             align-items: center;
             z-index: 1000;
+            transition: opacity 0.3s ease;
         }
 
         .audio {
@@ -108,33 +127,26 @@
     </div>
     
     <div class="banner">
-                                                                                                               
-                                                                                                                
-                                                                                                                
-                                                                                                                
-                                                                                                                
-                                                                                                                
-ppppp   ppppppppp   uuuuuu    uuuuuu rrrrr   rrrrrrrrr       ssssssssss   uuuuuu    uuuuuu      eeeeeeeeeeee    
-p::::ppp:::::::::p  u::::u    u::::u r::::rrr:::::::::r    ss::::::::::s  u::::u    u::::u    ee::::::::::::ee  
-p:::::::::::::::::p u::::u    u::::u r:::::::::::::::::r ss:::::::::::::s u::::u    u::::u   e::::::eeeee:::::ee
-pp::::::ppppp::::::pu::::u    u::::u rr::::::rrrrr::::::rs::::::ssss:::::su::::u    u::::u  e::::::e     e:::::e
- p:::::p     p:::::pu::::u    u::::u  r:::::r     r:::::r s:::::s  ssssss u::::u    u::::u  e:::::::eeeee::::::e
- p:::::p     p:::::pu::::u    u::::u  r:::::r     rrrrrrr   s::::::s      u::::u    u::::u  e:::::::::::::::::e 
- p:::::p     p:::::pu::::u    u::::u  r:::::r                  s::::::s   u::::u    u::::u  e::::::eeeeeeeeeee  
- p:::::p    p::::::pu:::::uuuu:::::u  r:::::r            ssssss   s:::::s u:::::uuuu:::::u  e:::::::e           
- p:::::ppppp:::::::pu:::::::::::::::uur:::::r            s:::::ssss::::::su:::::::::::::::uue::::::::e          
- p::::::::::::::::p  u:::::::::::::::ur:::::r            s::::::::::::::s  u:::::::::::::::u e::::::::eeeeeeee  
- p::::::::::::::pp    uu::::::::uu:::ur:::::r             s:::::::::::ss    uu::::::::uu:::u  ee:::::::::::::e  
- p::::::pppppppp        uuuuuuuu  uuuurrrrrrr              sssssssssss        uuuuuuuu  uuuu    eeeeeeeeeeeeee  
- p:::::p                                                                                                        
- p:::::p                                                                                                        
-p:::::::p                                                                                                       
-p:::::::p                                                                                                       
-p:::::::p                                                                                                       
-ppppppppp                                                                                                       
+        ppppp   ppppppppp   uuuuuu    uuuuuu rrrrr   rrrrrrrrr       ssssssssss   uuuuuu    uuuuuu      eeeeeeeeeeee    
+        p::::ppp:::::::::p  u::::u    u::::u r::::rrr:::::::::r    ss::::::::::s  u::::u    u::::u    ee::::::::::::ee  
+        p:::::::::::::::::p u::::u    u::::u r:::::::::::::::::r ss:::::::::::::s u::::u    u::::u   e::::::eeeee:::::ee
+        pp::::::ppppp::::::pu::::u    u::::u rr::::::rrrrr::::::rs::::::ssss:::::su::::u    u::::u  e::::::e     e:::::e
+         p:::::p     p:::::pu::::u    u::::u  r:::::r     r:::::r s:::::s  ssssss u::::u    u::::u  e:::::::eeeee::::::e
+         p:::::p     p:::::pu::::u    u::::u  r:::::r     rrrrrrr   s::::::s      u::::u    u::::u  e:::::::::::::::::e 
+         p:::::p     p:::::pu::::u    u::::u  r:::::r                  s::::::s   u::::u    u::::u  e::::::eeeeeeeeeee  
+         p:::::p    p::::::pu:::::uuuu:::::u  r:::::r            ssssss   s:::::s u:::::uuuu:::::u  e:::::::e           
+         p:::::ppppp:::::::pu:::::::::::::::uur:::::r            s:::::ssss::::::su:::::::::::::::uue::::::::e          
+         p::::::::::::::::p  u:::::::::::::::ur:::::r            s::::::::::::::s  u:::::::::::::::u e::::::::eeeeeeee  
+         p::::::::::::::pp    uu::::::::uu:::ur:::::r             s:::::::::::ss    uu::::::::uu:::u  ee:::::::::::::e  
+         p::::::pppppppp        uuuuuuuu  uuuurrrrrrr              sssssssssss        uuuuuuuu  uuuu    eeeeeeeeeeeeee  
+         p:::::p                                                                                                        
+         p:::::p                                                                                                        
+        p:::::::p                                                                                                       
+        p:::::::p                                                                                                       
+        p:::::::p                                                                                                       
+        pppppppppp                                                                                                       
     </div>
     
-    <div class="swing"></div>
     <div class="profile profile1">
         <img src="https://media.discordapp.net/attachments/1352046968192368701/1352050918627213414/Screenshot_2025-02-14_185829.png?ex=67de954a&is=67dd43ca&hm=3adbc5915224833e27f7d76eb4c6f71a189e47690d182b4456ebc738abefe6ba&=&format=webp&quality=lossless" alt="Profile 1"> 
         Plug
@@ -188,4 +200,4 @@ ppppppppp
         }
     </script>
 </body>
-</html>
+</html> 
